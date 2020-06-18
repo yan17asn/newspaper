@@ -6,7 +6,7 @@ import * as bootstrap from 'bootstrap'
 export { $, popper, bootstrap } 
 
 import { renderCats } from './cats'
-import { getArticles } from './articles'
+import { getArticles, getArticle } from './articles'
 import { renderNav } from './nav'
 import { renderLoginForm } from './loginForm'
 import { renderArticleForm } from './articleForm'
@@ -15,7 +15,15 @@ import { Category } from './categories'
 // renderCats()
 renderNav()
 
-const page = window.location.href.split('#')[1]
+let page = window.location.href.split('#')[1]
+let id
+
+if(page && page.startsWith('Article_')) {
+    id = page.split('_')[1]
+    page = 'Article'    
+}
+
+console.log('Rendering page...', page)
 
 switch (page) {
     case 'Home':
@@ -24,6 +32,9 @@ switch (page) {
     case 'Login':
         renderLoginForm()
         break
+    case 'Article':
+        getArticle(id)
+        break;
     case 'ArticleForm':
         renderArticleForm()
         break
