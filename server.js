@@ -2,6 +2,8 @@ const path =  require('path')
 const express = require('express')
 const { postLogin, postArticle } = require('./js/api')
 
+console.log('API_URL', process.env.API_URL)
+
 const app = express()
 app.use(express.json())
 
