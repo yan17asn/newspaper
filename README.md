@@ -1,6 +1,6 @@
 # newspaper azure link
 #https://weinewspaper.azurewebsites.net/
 
-username: wei 
+Username:  wei 
 
-password:silly123
+Password:  silly123
