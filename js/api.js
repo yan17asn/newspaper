@@ -18,6 +18,7 @@ function postLogin(req, res) {
     } else {
         res.end(JSON.stringify({
             status: 'ERROR'
+
         }))
     }
 }
@@ -36,17 +37,17 @@ function postArticle(req, res) {
         }
         // Post to GraphCMS
         const createArticleQuery = `
-        mutation CreateArticle($title: String!, $content: RichTextAST!, $category: Category!) {
-            __typename
-            createArticle(data: {title: $title, content: $content, category: $category}) {
-                id,
-                title,
-                category,
-                content {
-                    html
+            mutation CreateArticle($title: String!, $content: RichTextAST!, $category: Category!) {
+                __typename
+                createArticle(data: {title: $title, content: $content, category: $category}) {
+                    id,
+                    title,
+                    category,
+                    content {
+                        html
+                    }
                 }
             }
-        }
         `
         $.post({
             url: apiUrl,
@@ -68,7 +69,7 @@ function postArticle(req, res) {
                 mutation PublishArticle($id: ID) {
                     __typename
                     publishArticle(where: {id: $id}, to: PUBLISHED) {
-                        content{
+                        content {
                             html
                         }
                         id
@@ -93,20 +94,23 @@ function postArticle(req, res) {
                     query: publishArticleQuery,
                     variables: variables
                 })
-            }).then(respopnse => {
+            }).then(response => {
                 res.end(JSON.stringify({
                     status: 'SUCCESS'
                 }))
-            }).fail(error =>{
+            }).fail(error => {
                 res.end(JSON.stringify({
                     status: 'ERROR',
-                    message: 'Failed to publish article.' 
+                    message: 'Failed to publish article.'
                 }))
             })
-        }).fail(console.error)
+        }).fail(error => {
+            res.end(JSON.stringify({
+                status: 'ERROR',
+                message: 'Failed to create article.'
+            }))
+        })
 
-        
-        
     } else {
         res.end(JSON.stringify({
             status: 'ERROR',

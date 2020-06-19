@@ -3,7 +3,7 @@
 import * as $ from 'jquery'
 import * as popper from 'popper.js'
 import * as bootstrap from 'bootstrap'
-export { $, popper, bootstrap } 
+export { $, popper, bootstrap }
 
 import { renderCats } from './cats'
 import { getArticles, getArticle } from './articles'
@@ -18,9 +18,9 @@ renderNav()
 let page = window.location.href.split('#')[1]
 let id
 
-if(page && page.startsWith('Article_')) {
+if (page && page.startsWith('Article_')) {
     id = page.split('_')[1]
-    page = 'Article'    
+    page = 'Article'
 }
 
 console.log('Rendering page...', page)
@@ -38,7 +38,7 @@ switch (page) {
     case 'ArticleForm':
         renderArticleForm()
         break
-    case Category.Comunity:
+    case Category.Community:
         getArticles(Category.Community)
         break
     case Category.Opinion:

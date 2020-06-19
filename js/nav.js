@@ -3,12 +3,12 @@ import * as $ from 'jquery'
 import { Category } from './categories'
 import { getArticles } from './articles'
 import { renderLoginForm, logout } from './loginForm'
-import { renderArticleForm} from  './articleForm'
+import { renderArticleForm } from './articleForm'
 
 
 export function renderNav() {
     // Home links
-    $('a[href="#Home"]').on('click', function(){
+    $('a[href="#Home"]').on('click', function() {
         getArticles()    
     })
     
@@ -35,7 +35,7 @@ export function renderNav() {
     })
 
     //Render logged in user nav if token is set
-    if(sessionStorage.getItem('token')) {
+    if (sessionStorage.getItem('token')) {
         $('.auth-user').css('display', 'block')
         $('.user').css('display', 'none')
     }
@@ -55,7 +55,7 @@ function renderCategoryDropdown() {
     
     categoryMenuItems.find('a').on('click', function(event) {
         let clickedEl = $(event.target)
-        let category = clickedEl.attr('href').replace('#','')
+        let category = clickedEl.attr('href').replace('#', '')
         if (Category.hasOwnProperty(category)) {
             getArticles(category)
         }

@@ -44,7 +44,7 @@ export function getArticles(category) {
                         ${article.content.html}
                     </section>
                     <a class="article-link" href="#Article_${article.id}">Read more</a>
-                    
+
 
                 </article>
             `
@@ -97,7 +97,7 @@ export function getArticle(id) {
                     </section>
                 </article>
             </div>
-            `
+        `
 
         content.html(articleHtml)
     })

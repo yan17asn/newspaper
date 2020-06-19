@@ -82,7 +82,7 @@ function renderCategoryOptions(data) {
             selected = `selected="selected"`
         }
         categoryOptionsHtml += `
-        <option value="${category}" ${selected}>${category}</option>
+            <option value="${category}" ${selected}>${category}</option>
         `
     }
     return categoryOptionsHtml
