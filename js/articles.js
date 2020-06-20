@@ -97,7 +97,7 @@ export function getArticle(id) {
 
         const articleHtml = `
             <div class="row">
-                <article class="col">
+                <article class="col newsdetail">
                     <h3>${article.title}</h3>
                     <small>Published: ${article.publishedAt}</small>
                     <section>

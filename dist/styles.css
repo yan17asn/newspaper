@@ -10032,6 +10032,13 @@ h3 {
   overflow: hidden;
 }
 
+.newsdetail section {
+  margin: 1em 0 1em 0;
+  background: white;
+  padding: 1em;
+  border-radius: 15px;
+}
+
 #logobanner {
   margin-top: 20px;
   text-align: center;
