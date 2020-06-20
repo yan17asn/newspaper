@@ -27,9 +27,15 @@ export function getArticles(category) {
         const content = $('#content')
 
         // Print to console for debugging.
-        console.log(articles);
+        console.log(articles)
 
-        let articleListHtml = '<div class="row">'
+        // if (category) {
+            let articleListHtml = '<div class="row">'
+        // } else {
+        //     let articleListHtml = '<div class="row">'
+        // }
+
+        
 
         articles.forEach((article, index) => {
             if (index % 3 === 0) {
@@ -37,15 +43,17 @@ export function getArticles(category) {
             }
             
             articleListHtml += `
-                <article class="col list">
-                    <h3>${article.title}</h3>
+                <article class="col list col-lg-4 col-md-6 col-sm-12 col-12 ${article.category}">
+                    <div class="newsTitle">
+                        <h3>${article.title}</h3>   
+                    </div>
+                    <div class="newsContent">
                     <small>Published: ${article.publishedAt}</small>
                     <section>
                         ${article.content.html}
                     </section>
                     <a class="article-link" href="#Article_${article.id}">Read more</a>
-
-
+                    </div>
                 </article>
             `
         })

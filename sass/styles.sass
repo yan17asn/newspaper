@@ -1,18 +1,86 @@
 $primary: purple
 $dark: #333
 @import '~bootstrap'
+@import 'color'
+@import 'size'
 
-header
-    margin-top: 20px
-    margin-bottom: 20px
-
-article.list
-    section
-        max-height: 300px
-        overflow: hidden
-
+//Login page
 .user
     display: block
 
 .auth-user
     display: none
+
+#content
+    border-radius: 15px
+    background: #efefef
+    padding: 1em
+    margin: 1em 0 0 0
+
+//News page
+    
+.row
+    margin : 0 auto
+
+@mixin news-block($title,$content)   
+    padding: 1em
+    .newsTitle
+        background-color: $title
+        padding: 1em
+        border-radius: 15px 15px 0px 0px
+        height: 10em
+        
+        h3
+            height: 3.5em
+            overflow: hidden
+
+        h3:hover
+            font-size: 1em
+
+    .newsContent
+        background-color: $content
+        padding: 1em
+        border-radius: 0px 0px 15px 15px
+
+        section
+            height: 12em
+            overflow: hidden
+       
+.Opinion
+    @include news-block($opi-title,$opi-content)
+
+.Community
+    @include news-block($com-title,$com-content)
+
+.World
+    @include news-block($wld-title,$wld-content)
+
+.Sports
+    @include news-block($spt-title,$spt-content)
+
+#logobanner
+    margin-top: 20px
+    text-align: center
+    
+    img
+        width: 30%
+        margin-bottom: 5px
+        @include size(sm)
+            width: 70%
+        @include size(md)
+            width: 50%
+
+small
+    font-weight: bold
+
+//footer
+.copyright
+    text-align: center
+
+
+
+
+
+
+
+      

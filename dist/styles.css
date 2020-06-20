@@ -9909,20 +9909,152 @@ h3 {
     border-color: #dee2e6;
   }
 }
-header {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-article.list section {
-  max-height: 300px;
-  overflow: hidden;
-}
-
 .user {
   display: block;
 }
 
 .auth-user {
   display: none;
+}
+
+#content {
+  border-radius: 15px;
+  background: #efefef;
+  padding: 1em;
+  margin: 1em 0 0 0;
+}
+
+.row {
+  margin: 0 auto;
+}
+
+.Opinion {
+  padding: 1em;
+}
+.Opinion .newsTitle {
+  background-color: #7ecef4;
+  padding: 1em;
+  border-radius: 15px 15px 0px 0px;
+  height: 10em;
+}
+.Opinion .newsTitle h3 {
+  height: 3.5em;
+  overflow: hidden;
+}
+.Opinion .newsTitle h3:hover {
+  font-size: 1em;
+}
+.Opinion .newsContent {
+  background-color: #eaf6fd;
+  padding: 1em;
+  border-radius: 0px 0px 15px 15px;
+}
+.Opinion .newsContent section {
+  height: 12em;
+  overflow: hidden;
+}
+
+.Community {
+  padding: 1em;
+}
+.Community .newsTitle {
+  background-color: #f19ec2;
+  padding: 1em;
+  border-radius: 15px 15px 0px 0px;
+  height: 10em;
+}
+.Community .newsTitle h3 {
+  height: 3.5em;
+  overflow: hidden;
+}
+.Community .newsTitle h3:hover {
+  font-size: 1em;
+}
+.Community .newsContent {
+  background-color: #fdeff5;
+  padding: 1em;
+  border-radius: 0px 0px 15px 15px;
+}
+.Community .newsContent section {
+  height: 12em;
+  overflow: hidden;
+}
+
+.World {
+  padding: 1em;
+}
+.World .newsTitle {
+  background-color: #89c997;
+  padding: 1em;
+  border-radius: 15px 15px 0px 0px;
+  height: 10em;
+}
+.World .newsTitle h3 {
+  height: 3.5em;
+  overflow: hidden;
+}
+.World .newsTitle h3:hover {
+  font-size: 1em;
+}
+.World .newsContent {
+  background-color: #ebf5ec;
+  padding: 1em;
+  border-radius: 0px 0px 15px 15px;
+}
+.World .newsContent section {
+  height: 12em;
+  overflow: hidden;
+}
+
+.Sports {
+  padding: 1em;
+}
+.Sports .newsTitle {
+  background-color: #fff799;
+  padding: 1em;
+  border-radius: 15px 15px 0px 0px;
+  height: 10em;
+}
+.Sports .newsTitle h3 {
+  height: 3.5em;
+  overflow: hidden;
+}
+.Sports .newsTitle h3:hover {
+  font-size: 1em;
+}
+.Sports .newsContent {
+  background-color: #fffeee;
+  padding: 1em;
+  border-radius: 0px 0px 15px 15px;
+}
+.Sports .newsContent section {
+  height: 12em;
+  overflow: hidden;
+}
+
+#logobanner {
+  margin-top: 20px;
+  text-align: center;
+}
+#logobanner img {
+  width: 30%;
+  margin-bottom: 5px;
+}
+@media screen and (max-width: 39.99em) {
+  #logobanner img {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 40em) and (max-width: 63.99em) {
+  #logobanner img {
+    width: 50%;
+  }
+}
+
+small {
+  font-weight: bold;
+}
+
+.copyright {
+  text-align: center;
 }

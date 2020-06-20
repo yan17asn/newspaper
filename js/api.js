@@ -6,7 +6,7 @@ const window = new JSDOM().window
 const $ = require('jquery')(window)
 
 // Use env variables for a production server
-const { username, password, apiUrl, apiKey } = require('./.secret')
+const { username, password, apiUrl, apiKey } = require('./env')
 
 function postLogin(req, res) {
     const credentials = auth(req)

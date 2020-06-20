@@ -7,51 +7,58 @@
     <link rel="stylesheet" href="./dist/styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#Home">Newspaper</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link  active" href="#Home">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categories
-                    </a>
-                    <div id="category-menu-items" class="dropdown-menu" aria-labelledby="categoryDropdown">
-                        
-                    </div>
-                </li>
-                <li class="nav-item user">
-                    <a class="nav-link" href="#Login">Editor login</a>
-                </li>
-                <li class="nav-item auth-user">
-                    <a class="nav-link" href="#Logout">Logout</a>
-                </li>
-                <li class="nav-item auth-user">
-                    <a class="nav-link" href="#ArticleForm">Create Article</a>
-                </li>    
-            </ul>
+    <header>
+        <div id="logobanner">
+            <img src="./img/titlebanner.png" alt="Seattle Central Times">
+            <p>Date: <span id="datetime"></span></p>
         </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#Home">Newspaper</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link  active" href="#Home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        </a>
+                        <div id="category-menu-items" class="dropdown-menu" aria-labelledby="categoryDropdown">
+                            
+                        </div>
+                    </li>
+                    <li class="nav-item user">
+                        <a class="nav-link" href="#Login">Editor login</a>
+                    </li>
+                    <li class="nav-item auth-user">
+                        <a class="nav-link" href="#Logout">Logout</a>
+                    </li>
+                    <li class="nav-item auth-user">
+                        <a class="nav-link" href="#ArticleForm">Create Article</a>
+                    </li>    
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+
+
+    
 
     <div class="container">
-        <header class="row">
-            <div class="col">
-                <h1>Newspaper</h1>
-            </div>
-        </header>
-
         <main id="content">
             
         </main>
     </div>
 
     <!-- Future home of the Footer -->
+    <footer>
+        <div class="copyright"><p>Copyright © 2020 Weirui Web130</p></div>
+    </footer>
 
     <!-- Modals -->
         <div id="create-article-success" class="modal" tabindex="-1" role="dialog">
@@ -96,5 +103,9 @@
 
     <script src="./node_modules/ckeditor4/ckeditor.js" type="text/javascript"></script>
     <script src="./dist/app.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2)) +"/"+ (dt.getFullYear());
+    </script>
 </body>
 </html>

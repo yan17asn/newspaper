@@ -23,7 +23,6 @@
     "popper.js": "^1.16.1",
     "slate": "^0.58.3",
     "slate-hyperscript": "^0.58.3",
-    "tss": "0.0.24",
     "tsscmp": "^1.0.6"
   },
   "devDependencies": {
