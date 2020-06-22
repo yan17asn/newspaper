@@ -28,19 +28,25 @@ export function getArticles(category) {
 
         // Print to console for debugging.
         console.log(articles)
+        const title = $('#page-title')
+        if (category) {
+            title.html(`${category} News`)
+        } else {
+            title.html('Latest News')
+        }
 
-        // if (category) {
-            let articleListHtml = '<div class="row">'
-        // } else {
-        //     let articleListHtml = '<div class="row">'
-        // }
-
+        let articleListHtml = '<div class="row">'
         
-
         articles.forEach((article, index) => {
             if (index % 3 === 0) {
                 articleListHtml += '</div><div class="row">'
             }
+
+            const date = new Date(article.publishedAt)
+            const articleDate = `
+                ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}
+                at ${date.getHours()}:${date.getMinutes()}
+            `
             
             articleListHtml += `
                 <article class="col list col-lg-4 col-md-6 col-sm-12 col-12 ${article.category}">
@@ -48,7 +54,7 @@ export function getArticles(category) {
                         <h3>${article.title}</h3>   
                     </div>
                     <div class="newsContent">
-                    <small>Published: ${article.publishedAt}</small>
+                    <small>Published: ${articleDate}</small>
                     <section>
                         ${article.content.html}
                     </section>
@@ -93,13 +99,19 @@ export function getArticle(id) {
         const content = $('#content')
 
         // Print to console for debugging.
-        console.log(article);
+        console.log(article)
 
+        const date = new Date(article.publishedAt)
+            const articleDate = `
+                ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}
+                at ${date.getHours()}:${date.getMinutes()}
+            `
+        
         const articleHtml = `
             <div class="row">
                 <article class="col newsdetail">
                     <h3>${article.title}</h3>
-                    <small>Published: ${article.publishedAt}</small>
+                    <small>Published: ${articleDate}</small>
                     <section>
                         ${article.content.html}
                     </section>
